@@ -1,9 +1,10 @@
 import {initializeApp} from "firebase/app" //inicia conexion con firebase
 import {getFirestore} from "firebase/firestore" //obtenes instancia del servicio de firestore
+import 'dotenv/config'
 
 //Info Cuenta, key personal acceso.
 const firebaseConfig = {
-    apiKey: "AIzaSyCBLXfPUW9CC5ojFx_hOXJKvU6Y9FMm2Q0",
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: "e-comerce-beckmann.firebaseapp.com",
     projectId: "e-comerce-beckmann",
     storageBucket: "e-comerce-beckmann.appspot.com",
