@@ -25,13 +25,11 @@ const Checkout = () => {
             return;
         }
 
-
         //VERIFICAR SI COINCIDEN LOS MAIL INGRESADOS
         if (email !== emailConfimarcion) {
             setError("Los campos del email no coinciden");
             return;
         }
-
         //LA ORDEN ESTA COMPUESTA POR TODOS LOS DATOS DEL FORM MAS LA INFORMACION DE LA COMPRA, ASIQUE MAPEAMOS EL CARRITO
         const orden = {
             items: carrito.map(producto => ({
