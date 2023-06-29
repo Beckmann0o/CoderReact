@@ -1,28 +1,32 @@
-
-import { Container, Nav, Navbar, NavbarBrand } from 'react-bootstrap'
-import CartWidget from '../CartWidget/CartWidget'
-import { NavLink } from 'react-router-dom'
-
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import CartWidget from '../CartWidget/CartWidget';
+import { NavLink, Link } from 'react-router-dom';
 
 function NavBar() {
   return (
-  //control + espacio ver lista props.
-  <Navbar bg='success'>
-    <Container>
-        <Nav>
-          <NavLink to={"/"}>LOGITECH</NavLink>
-          
-        </Nav>
-        <Nav>
-          <NavLink to={"/categoria/Mouses"}>Mouses </NavLink>
-          <NavLink to={"/categoria/Teclados"}>Teclados</NavLink>
-          <NavLink to={"/categoria/Auriculares"}>Auricular  </NavLink>
-          <CartWidget></CartWidget>
-        </Nav>
-        
-    </Container>
-  </Navbar>
-    )
+    <Navbar bg='success' expand='lg' variant='dark'>
+      <Container>
+        <Link to="/" className="navbar-brand">LOGITECH</Link>
+        <Navbar.Toggle aria-controls='navbar-nav' />
+        <Navbar.Collapse id='navbar-nav'>
+          <Nav className='mr-auto'>
+            <NavLink className='nav-link' to='/categoria/Mouses'>
+              Mouses
+            </NavLink>
+            <NavLink className='nav-link' to='/categoria/Teclados'>
+              Teclados
+            </NavLink>
+            <NavLink className='nav-link' to='/categoria/Auriculares'>
+              Auriculares
+            </NavLink>
+          </Nav>
+          <Nav className='ml-auto'>
+            <CartWidget />
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
-export default NavBar
+export default NavBar;
