@@ -1,18 +1,18 @@
 import {initializeApp} from "firebase/app" //inicia conexion con firebase
 import {getFirestore} from "firebase/firestore" //obtenes instancia del servicio de firestore
-import 'dotenv/config'
 
 //Info Cuenta, key personal acceso.
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: "e-comerce-beckmann.firebaseapp.com",
-    projectId: "e-comerce-beckmann",
-    storageBucket: "e-comerce-beckmann.appspot.com",
-    messagingSenderId: "516651976217",
-    appId: "1:516651976217:web:2f5591490ec5d960c0cc88",
-    measurementId: "G-ENXHYKJ27R"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain:import.meta.env.VITE_AUTH_DOMAIN,
+    projectId:import.meta.env.VITE_PROJECT_ID,
+    storageBucket:import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId:import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId:import.meta.env.VITE_APP_ID,
+    measurementId:import.meta.env.VITE_MEASUREMENT_ID
   };
 
-const app = initializeApp(firebaseConfig);
+console.log(import.meta.env)
+  const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
 //export referencia, para usar en toda la app
